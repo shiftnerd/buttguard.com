@@ -1,98 +1,101 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <meta charset="UTF-8" />
+    <title>Stitch Design</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
         href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700" />
-
-    <title>Stitch Design</title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 </head>
 
-<body>
-    <div class="relative flex size-full min-h-screen flex-col bg-[#141a1f] dark group/design-root overflow-x-hidden"
-        style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
-        <div class="layout-container flex h-full grow flex-col">
-            <header
-                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#2b3640] px-10 py-3">
-                <div class="flex items-center gap-4 text-white">
-                    <div class="size-4">
-                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_6_319)">
-                                <path
-                                    d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z"
-                                    fill="currentColor"></path>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_6_319">
-                                    <rect width="48" height="48" fill="white"></rect>
-                                </clipPath>
-                            </defs>
-                        </svg>
-                    </div>
-                    <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">ButtGuard</h2>
+<body class="bg-[#141a1f] font-sans" style='font-family:"Space Grotesk","Noto Sans",sans-serif;'>
+    <div class="min-h-screen flex flex-col">
+        <header class="flex items-center justify-between border-b border-[#2b3640] px-10 py-3">
+            <div class="flex items-center gap-4 text-white">
+                <!-- logo + title -->
+                <div class="w-8 h-8 text-white">
+                    <!-- ... your SVG ... -->
                 </div>
-                <div class="flex flex-1 justify-end gap-8">
-                    <div class="flex items-center gap-9">
-                        <a href="index.html" class="text-white hover:text-[#317fcd]">Home</a>
-                        <a href="features.html" class="text-white hover:text-[#317fcd]">Product</a>
-                        <a href="pricing.html" class="text-white hover:text-[#317fcd]">Pricing</a>
-                        <a href="blog.html" class="text-white hover:text-[#317fcd]">Blog</a>
-                        <a href="docs.html" class="text-white hover:text-[#317fcd]">Docs</a>
-                    </div>
-                    <button
-                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#699bcd] text-[#141a1f] text-sm font-bold leading-normal tracking-[0.015em]">
-                        <span class="truncate">Get Protected Now</span>
+                <h2 class="text-lg font-bold">ButtGuard</h2>
+            </div>
+            <nav class="flex items-center gap-8">
+                <a href="index.html" class="text-white hover:text-[#317fcd]">Home</a>
+                <a href="features.html" class="text-white hover:text-[#317fcd]">Product</a>
+                <a href="pricing.html" class="text-white hover:text-[#317fcd]">Pricing</a>
+                <a href="blog.html" class="text-white hover:text-[#317fcd]">Blog</a>
+                <a href="docs.html" class="text-white hover:text-[#317fcd]">Docs</a>
+                <button class="ml-4 bg-[#699bcd] text-[#141a1f] rounded-xl px-4 h-10 font-bold">
+                    Get Protected Now
+                </button>
+            </nav>
+        </header>
+
+        <!-- Hero with click-to-play video -->
+        <div class="flex-1 flex items-center justify-center px-8 py-6">
+            <div id="video-container" class="relative w-full max-w-4xl aspect-video rounded-xl overflow-hidden">
+                <!-- 1) the invisible player slot -->
+                <div id="player" class="absolute inset-0"></div>
+
+                <!-- 2) the thumbnail background -->
+                <div id="thumbnail" class="absolute inset-0 bg-cover bg-center"
+                    style="background-image:url('https://img.youtube.com/vi/SpKFXqqEXZU/maxresdefault.jpg')"></div>
+
+                <!-- 3) the play-button overlay -->
+                <div id="play-overlay"
+                    class="absolute inset-0 flex items-center justify-center z-30 cursor-pointer bg-black/25 pointer-events-auto">
+                    <button class="text-white text-5xl bg-red-600 rounded-full p-4">
+                        ▶️
                     </button>
                 </div>
-            </header>
-            <div class="px-40 flex flex-1 justify-center py-5">
-                <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-                    <div class="@container">
-                        <div class="@[480px]:p-4">
-                            <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
-                                style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCfb89Hm0iHJiA6eMgbHGfZPBma2BjSZGJp6uHq01MtMkopdY1yncE_UbgmGY5gqvr466zw0cs6OHTXrdg1DG9vkutT5GDDe1Np64zqwHfZ-3Te-pwR5wwT54BZ5vIieLTfNR-SyFGGN7JM1QeYArZ4BpfS_AQnNkq4aokMzFoKlmvDsrpysMTxQOGuMrzsChSruleBnlRElgDk9ZA2VYZym7VfG50xXPWSAYn6XOG-0gaHqyXu8jIltJ9Kc_XGv6Dh0MJW8F7rQcE");'>
-                                <div class="flex flex-col gap-2 text-center">
-                                    <h1
-                                        class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
-                                        ButtGuard: Secure Your Code, Shield Your Rear.
-                                    </h1>
-                                    <h2
-                                        class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-                                        Our AI code reviewer covers your code like a knight's armor, protecting it from
-                                        bugs and vulnerabilities.
-                                    </h2>
-                                </div>
-                                <button
-                                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#699bcd] text-[#141a1f] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
-                                    <span class="truncate">Get Protected Now</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+
+                <!-- 4) your text + CTA, with a text-shadow for readability -->
+                <div class="relative z-20 flex flex-col items-center justify-center h-full text-center text-white px-4"
+                    style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
+                    <h1 class="text-4xl font-black sm:text-5xl">
+                        ButtGuard: Secure Your Code, Shield Your Rear.
+                    </h1>
+                    <p class="mt-2 text-base sm:text-lg">
+                        Our AI code reviewer covers your code like a knight's armor, protecting it from bugs and
+                        vulnerabilities.
+                    </p>
+                    <button class="mt-6 bg-[#699bcd] text-[#141a1f] rounded-xl px-5 h-12 font-bold">
+                        Get Protected Now
+                    </button>
                 </div>
             </div>
-            <footer class="flex justify-center">
-                <div class="flex max-w-[960px] flex-1 flex-col">
-                    <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
-                        <div
-                            class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-                            <a class="text-[#9dadbe] text-base font-normal leading-normal min-w-40" href="#">About
-                                Us</a>
-                            <a class="text-[#9dadbe] text-base font-normal leading-normal min-w-40" href="#">Contact</a>
-                            <a class="text-[#9dadbe] text-base font-normal leading-normal min-w-40" href="#">Privacy
-                                Policy</a>
-                            <a class="text-[#9dadbe] text-base font-normal leading-normal min-w-40" href="#">Terms of
-                                Service</a>
-                        </div>
-                        <p class="text-[#9dadbe] text-base font-normal leading-normal">© 2024 ButtGuard. All rights
-                            reserved.</p>
-                    </footer>
-                </div>
-            </footer>
         </div>
+
+        <script>
+            document.getElementById('play-overlay').addEventListener('click', function () {
+                const player = document.getElementById('player');
+                const iframe = document.createElement('iframe');
+                iframe.src = 'https://www.youtube.com/embed/SpKFXqqEXZU?autoplay=1&rel=0&modestbranding=1';
+                iframe.frameBorder = '0';
+                iframe.allow = 'autoplay; fullscreen; encrypted-media';
+                iframe.allowFullscreen = true;
+                iframe.className = 'absolute inset-0 w-full h-full';
+                player.appendChild(iframe);
+
+                // hide thumbnail + play button once loaded
+                document.getElementById('thumbnail').style.display = 'none';
+                this.style.display = 'none';
+            });
+        </script>
+
+
+
+
+        <footer class="bg-[#141a1f] text-[#9dadbe] text-center py-10">
+            <div class="flex flex-wrap justify-center gap-6 mb-4">
+                <a href="#" class="hover:text-white">About Us</a>
+                <a href="#" class="hover:text-white">Contact</a>
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Terms of Service</a>
+            </div>
+            <p>© 2024 ButtGuard. All rights reserved.</p>
+        </footer>
     </div>
 </body>
 

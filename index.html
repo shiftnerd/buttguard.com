@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Buttguard - covering your derriere from vibe code</title>
+    <title>Buttguard – covering your derriere from vibe code</title>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
         href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700" />
@@ -13,7 +13,7 @@
 <body class="bg-[#141a1f] font-sans" style='font-family:"Space Grotesk","Noto Sans",sans-serif;'>
     <div class="min-h-screen flex flex-col">
         <header class="flex items-center justify-between border-b border-[#2b3640] px-10 py-3">
-            <!-- left: logo above title -->
+            <!-- logo + title -->
             <div class="flex flex-col items-center gap-1 text-white">
                 <img src="https://i.imgur.com/kFS0Y4z.png" alt="ButtGuard Logo" class="w-10 h-10" />
                 <h2 class="text-lg font-bold">ButtGuard</h2>
@@ -26,66 +26,38 @@
                 <a href="pricing.html" class="text-white hover:text-[#317fcd]">Pricing</a>
                 <a href="blog.html" class="text-white hover:text-[#317fcd]">Blog</a>
                 <a href="docs.html" class="text-white hover:text-[#317fcd]">Docs</a>
-                <button class="ml-4 bg-[#699bcd] text-[#141a1f] rounded-xl px-4 h-10 font-bold">
+                <button class="ml-4 bg-[#699bcd] text-[#141a1f] rounded-xl px-4 h-10 font-bold hover:bg-[#5589a8]">
                     Get Protected Now
                 </button>
             </nav>
+
         </header>
-        <!-- Hero with click-to-play video -->
-        <div class="flex-1 flex items-center justify-center px-8 py-6">
-            <div id="video-container" class="relative w-full max-w-4xl aspect-video rounded-xl overflow-hidden">
-                <!-- 1) the invisible player slot -->
-                <div id="player" class="absolute inset-0"></div>
 
-                <!-- 2) the thumbnail background -->
-                <div id="thumbnail" class="absolute inset-0 bg-cover bg-center"
-                    style="background-image:url('https://img.youtube.com/vi/SpKFXqqEXZU/maxresdefault.jpg')"></div>
-
-                <!-- 3) the play-button overlay -->
-                <div id="play-overlay"
-                    class="absolute inset-0 flex items-center justify-center z-30 cursor-pointer bg-black/25 pointer-events-auto">
-                    <button class="text-white text-5xl bg-red-600 rounded-full p-4">
-                        ▶️
-                    </button>
-                </div>
-
-                <!-- 4) your text + CTA, with a text-shadow for readability -->
-                <div class="relative z-20 flex flex-col items-center justify-center h-full text-center text-white px-4"
-                    style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
-                    <h1 class="text-4xl font-black sm:text-5xl">
-                        ButtGuard: Secure Your Code, Shield Your Rear.
-                    </h1>
-                    <p class="mt-2 text-base sm:text-lg">
-                        Our AI code reviewer covers your code like a knight's armor, protecting it from bugs and
-                        vulnerabilities.
-                    </p>
-                    <button class="mt-6 bg-[#699bcd] text-[#141a1f] rounded-xl px-5 h-12 font-bold">
-                        Get Protected Now
-                    </button>
-                </div>
+        <main class="flex-1 flex flex-col items-center justify-start px-8 pt-6 space-y-8">
+            <!-- TEXT -->
+            <div class="text-center text-white px-4" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
+                <h1 class="text-4xl font-black sm:text-5xl">
+                    ButtGuard: Secure Your Code, Shield Your Rear.
+                </h1>
+                <p class="mt-2 text-base sm:text-lg">
+                    Our AI code reviewer covers your code like a knight's armor, protecting it from bugs and
+                    vulnerabilities.
+                </p>
+                <button class="mt-6 bg-[#e53e3e] text-white rounded-xl px-5 h-12 font-bold hover:bg-[#c53030]">
+                    Get Protected Now
+                </button>
             </div>
-        </div>
 
-        <script>
-            document.getElementById('play-overlay').addEventListener('click', function () {
-                const player = document.getElementById('player');
-                const iframe = document.createElement('iframe');
-                iframe.src = 'https://www.youtube.com/embed/SpKFXqqEXZU?autoplay=1&rel=0&modestbranding=1';
-                iframe.frameBorder = '0';
-                iframe.allow = 'autoplay; fullscreen; encrypted-media';
-                iframe.allowFullscreen = true;
-                iframe.className = 'absolute inset-0 w-full h-full';
-                player.appendChild(iframe);
+            <!-- VIDEO -->
+            <div class="w-full max-w-4xl aspect-video rounded-xl overflow-hidden shadow-lg">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/SpKFXqqEXZU?rel=0&modestbranding=1"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </main>
 
-                // hide thumbnail + play button once loaded
-                document.getElementById('thumbnail').style.display = 'none';
-                this.style.display = 'none';
-            });
-        </script>
-
-
-
-
+        <!-- footer… -->
         <footer class="bg-[#141a1f] text-[#9dadbe] text-center py-10">
             <div class="flex flex-wrap justify-center gap-6 mb-4">
                 <a href="#" class="hover:text-white">About Us</a>
@@ -93,7 +65,7 @@
                 <a href="#" class="hover:text-white">Privacy Policy</a>
                 <a href="#" class="hover:text-white">Terms of Service</a>
             </div>
-            <p>© 2024 ButtGuard. All rights reserved.</p>
+            <p>© 2025 ButtGuard. All rights reserved.</p>
         </footer>
     </div>
 </body>
